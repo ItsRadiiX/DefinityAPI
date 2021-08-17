@@ -1,5 +1,6 @@
 package com.itsradiix.spigot.models;
 
+import com.itsradiix.commons.data.messages.ColorTranslator;
 import com.itsradiix.spigot.DefinityAPISpigot;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -285,7 +286,7 @@ public class YAMLFileManager {
 	}
 
 	public static void logToConsole(String message){
-		Bukkit.getLogger().info(chatColor(message));
+		Bukkit.getLogger().info(ColorTranslator.translateColorCodes(message));
 	}
 
 	public static class Builder {
