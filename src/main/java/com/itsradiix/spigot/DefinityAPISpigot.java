@@ -8,7 +8,7 @@ public class DefinityAPISpigot {
 
 	private static JavaPlugin javaPlugin;
 
-	public DefinityAPISpigot(JavaPlugin javaPlugin){
+	public static void setup(JavaPlugin javaPlugin){
 		DefinityAPISpigot.javaPlugin = javaPlugin;
 		DefinityAPIUtils.setClassLoader(javaPlugin.getClass().getClassLoader());
 		DefinityAPIUtils.setLogger(javaPlugin.getLogger());
@@ -18,4 +18,5 @@ public class DefinityAPISpigot {
 	public static JavaPlugin getJavaPlugin() {
 		return javaPlugin;
 	}
+
 }
