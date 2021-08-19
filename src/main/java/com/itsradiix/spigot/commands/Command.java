@@ -125,14 +125,14 @@ public class Command implements CommandExecutor, TabExecutor {
 					if (args[0].equalsIgnoreCase(s.getName())){
 						if (!(sender instanceof Player)){
 							if (!s.isAllowConsole()){
-								sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noConsole"));
+								sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noConsole", "&cConsole is not allowed to use this command!"));
 								return true;
 							}
 						}
 						if (sender.hasPermission(s.getPermission())){
 							s.perform(sender, sendSubArgs(args));
 						} else {
-							sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noPermission"));
+							sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noPermission", "&cYou do not have permission to use this command!"));
 						}
 						return true;
 					}
@@ -140,13 +140,13 @@ public class Command implements CommandExecutor, TabExecutor {
 			}
 			if (!(sender instanceof Player)){
 				if (!allowConsole){
-					sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noConsole"));
+					sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noConsole", "&cConsole is not allowed to use this command!"));
 					return true;
 				}
 			}
 			perform(sender, args);
 		} else {
-			sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noPermission"));
+			sender.sendMessage(messages.getMessage(Messages.getLanguageID(),"noPermission", "&cYou do not have permission to use this command!"));
 		}
 
 		return true;

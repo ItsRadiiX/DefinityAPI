@@ -84,7 +84,7 @@ public class SubCommandBuilder {
 				false,
 				false,
 				((sender, args) -> {
-					sender.sendMessage(ColorTranslator.translateColorCodes(messages.getMessage(Messages.getLanguageID(),"helpHeader").replaceAll("%command_name%", baseCommand.name)));
+					sender.sendMessage(ColorTranslator.translateColorCodes(messages.getMessage(Messages.getLanguageID(),"helpHeader", "&b()&3=-=&b[ &6%command_name% &b]&3=-=&b()").replaceAll("%command_name%", baseCommand.name)));
 
 					List<SubCommand> subCommands = baseCommand.subCommands;
 					sender.sendMessage(ColorTranslator.translateColorCodes("&b" + baseCommand.syntax + " &7-&r " + baseCommand.description));
@@ -97,9 +97,8 @@ public class SubCommandBuilder {
 						}
 					}
 
-					sender.sendMessage(ColorTranslator.translateColorCodes(messages.getMessage(Messages.getLanguageID(),"helpFooter") + "\n"));
-					if (sender instanceof Player){
-						Player player = (Player) sender;
+					sender.sendMessage(ColorTranslator.translateColorCodes(messages.getMessage(Messages.getLanguageID(),"helpFooter", "&b()&3=-=-=-=-=-=-=&b()") + "\n"));
+					if (sender instanceof Player player){
 						player.playSound(player.getLocation(), Sound.ENTITY_EGG_THROW, 0.2F, 1.0F);
 					}
 				}),

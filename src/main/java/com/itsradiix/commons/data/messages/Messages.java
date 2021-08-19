@@ -29,6 +29,15 @@ public class Messages {
 		return ColorTranslator.translateColorCodes(languageMap.get(id).getMessages().get(msg));
 	}
 
+	public String getMessage(int id, String msg, String def){
+		String message = languageMap.get(id).getMessages().get(msg);
+		if (message == null || message.isBlank()){
+			message = def;
+		}
+		return ColorTranslator.translateColorCodes(message);
+
+	}
+
 	public static int getLanguageID(){
 		return 1;
 	}
